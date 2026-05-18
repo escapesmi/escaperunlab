@@ -26,7 +26,7 @@ export default async function TrainingPage() {
     : { data: [] };
 
   // Group by week
-  const byWeek: Record<number, typeof workouts> = {};
+  const byWeek: Record<number, any[]> = {};
   for (const w of workouts ?? []) {
     if (!byWeek[w.week]) byWeek[w.week] = [];
     byWeek[w.week]!.push(w);
