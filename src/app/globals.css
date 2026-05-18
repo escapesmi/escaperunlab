@@ -1,0 +1,220 @@
+/* src/app/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-body: "Space Grotesk", sans-serif;
+    --font-display: "Bebas Neue", sans-serif;
+    --font-mono: "JetBrains Mono", monospace;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: #0a0b0d;
+    color: #f0f2f5;
+    font-family: var(--font-body);
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #111318;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1e2330;
+    border-radius: 2px;
+  }
+
+  input[type="range"] {
+    accent-color: #00e5a0;
+  }
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+}
+
+@layer components {
+  /* ─── BUTTONS ─────────────────────────────────────────────── */
+  .btn-primary {
+    @apply bg-accent text-black font-bold rounded-xl px-7 py-3.5 text-sm
+           transition-all duration-200 hover:-translate-y-px hover:bg-accent-dim
+           active:translate-y-0 disabled:opacity-40 disabled:cursor-not-allowed
+           disabled:transform-none cursor-pointer border-none;
+    font-family: var(--font-body);
+  }
+
+  .btn-ghost {
+    @apply bg-transparent text-text-secondary border border-border rounded-xl
+           px-7 py-3.5 text-sm font-semibold transition-all duration-200
+           hover:border-border-hi hover:text-text-primary hover:bg-surface
+           cursor-pointer;
+    font-family: var(--font-body);
+  }
+
+  .btn-danger {
+    @apply bg-danger/10 text-danger border border-danger/30 rounded-xl
+           px-5 py-2.5 text-sm font-semibold transition-all duration-200
+           hover:bg-danger/20 cursor-pointer;
+  }
+
+  /* ─── CARDS ───────────────────────────────────────────────── */
+  .card {
+    @apply bg-surface border border-border rounded-2xl p-6
+           transition-colors duration-200 hover:border-border-hi;
+  }
+
+  .card-sm {
+    @apply bg-surface-alt border border-border rounded-xl p-5
+           transition-colors duration-200;
+  }
+
+  /* ─── INPUTS ──────────────────────────────────────────────── */
+  .input-field {
+    @apply bg-surface-alt border border-border rounded-xl px-4 py-3
+           text-text-primary text-sm w-full outline-none
+           transition-colors duration-200 focus:border-accent
+           placeholder:text-text-muted;
+    font-family: var(--font-body);
+    -webkit-appearance: none;
+  }
+
+  select.input-field option {
+    background: #111318;
+  }
+
+  textarea.input-field {
+    @apply resize-y;
+  }
+
+  /* ─── CHIPS ───────────────────────────────────────────────── */
+  .chip {
+    @apply px-4 py-2 rounded-full border border-border bg-surface-alt
+           text-text-secondary text-xs font-semibold cursor-pointer
+           transition-all duration-150 whitespace-nowrap
+           hover:border-accent hover:text-accent;
+    font-family: var(--font-body);
+  }
+
+  .chip.active {
+    @apply bg-accent-glow border-accent text-accent;
+  }
+
+  /* ─── TAGS ────────────────────────────────────────────────── */
+  .tag {
+    @apply px-2.5 py-1 rounded-md text-xs font-bold tracking-wide uppercase
+           inline-flex items-center gap-1.5;
+  }
+
+  /* ─── NAV ─────────────────────────────────────────────────── */
+  .nav-item {
+    @apply flex flex-col items-center gap-1 px-4 py-2.5 rounded-2xl
+           cursor-pointer transition-all duration-200 text-text-muted
+           border-none bg-transparent hover:text-text-secondary hover:bg-surface;
+    font-family: var(--font-body);
+  }
+
+  .nav-item.active {
+    @apply text-accent bg-accent-glow;
+  }
+
+  .nav-item span {
+    @apply text-xs font-semibold tracking-wide;
+  }
+
+  /* ─── WORKOUT ROW ─────────────────────────────────────────── */
+  .workout-row {
+    @apply flex items-center gap-4 p-4 rounded-2xl bg-surface-alt
+           border border-border cursor-pointer transition-all duration-200
+           hover:border-border-hi hover:bg-surface;
+  }
+
+  /* ─── MODAL ───────────────────────────────────────────────── */
+  .modal-overlay {
+    @apply fixed inset-0 bg-black/70 flex items-end justify-center z-50;
+    backdrop-filter: blur(4px);
+  }
+
+  .modal-sheet {
+    @apply bg-surface border border-border rounded-t-3xl p-8 w-full
+           max-w-lg max-h-[90vh] overflow-y-auto;
+    animation: fadeUp 0.3s ease;
+  }
+
+  /* ─── METRIC CARD ─────────────────────────────────────────── */
+  .metric-card {
+    @apply bg-surface-alt border border-border rounded-2xl p-5;
+  }
+
+  /* ─── AI BUBBLE ───────────────────────────────────────────── */
+  .ai-bubble {
+    @apply rounded-2xl p-4;
+    background: linear-gradient(
+      135deg,
+      rgba(0, 229, 160, 0.08),
+      rgba(77, 158, 255, 0.08)
+    );
+    border: 1px solid rgba(0, 229, 160, 0.25);
+  }
+
+  /* ─── FONT HELPERS ────────────────────────────────────────── */
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+@layer utilities {
+  /* Animations */
+  .animate-fade-up {
+    animation: fadeUp 0.5s ease both;
+  }
+
+  .animate-fade-up-1 { animation: fadeUp 0.5s ease 0.1s both; }
+  .animate-fade-up-2 { animation: fadeUp 0.5s ease 0.2s both; }
+  .animate-fade-up-3 { animation: fadeUp 0.5s ease 0.3s both; }
+  .animate-fade-up-4 { animation: fadeUp 0.5s ease 0.4s both; }
+  .animate-fade-up-5 { animation: fadeUp 0.5s ease 0.5s both; }
+
+  .animate-glow {
+    animation: glowPulse 2s ease-in-out infinite;
+  }
+
+  .animate-pulse-dot {
+    animation: pulse 2s ease-in-out infinite;
+  }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glowPulse {
+  0%,100% { box-shadow: 0 0 20px rgba(0, 229, 160, 0.15); }
+  50%     { box-shadow: 0 0 40px rgba(0, 229, 160, 0.3); }
+}
+
+@keyframes pulse {
+  0%,100% { opacity: 1; }
+  50%     { opacity: 0.4; }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
