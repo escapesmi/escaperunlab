@@ -25,7 +25,7 @@ export default function TopBar({ name, avatarUrl }: Props) {
           </svg>
         </div>
         <span className="font-display text-lg tracking-widest text-text-primary">
-          ECHO STRIDE
+          ESCAPE RUN LAB
         </span>
       </div>
 

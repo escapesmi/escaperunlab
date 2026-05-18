@@ -23,7 +23,7 @@ export default function LandingPage() {
             </svg>
           </div>
           <span className="font-display text-2xl tracking-widest text-text-primary">
-            ECHO STRIDE
+            ESCAPE RUN LAB
           </span>
         </div>
         <Link href="/auth/login" className="btn-ghost text-sm py-2.5 px-5">
@@ -103,7 +103,7 @@ export default function LandingPage() {
 
       {/* Footer */}
       <footer className="text-center py-6 text-text-muted text-xs">
-        © 2025 Echo Stride Club · Built for Indonesian Runners
+        © 2025 Escape Run Lab · Built for Newbie
       </footer>
     </main>
   );
