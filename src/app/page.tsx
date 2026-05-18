@@ -49,7 +49,7 @@ export default function LandingPage() {
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
           }}>
-          RUN<br />SMARTER.<br />GO FURTHER.
+          AGAINST<br />PASSIVE<br />EXISTENCE.
         </h1>
 
         <p className="text-text-secondary text-lg leading-relaxed mb-10 max-w-md animate-fade-up-2">
